@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="version">1</string>
+    <string name="homepage_text_1">Hello All</string>
+    <string name="compose_shortcut_short_label1">Short Label</string>
+    <string name="compose_shortcut_long_label1">Long Label</string>
+    <string name="compose_disabled_message1">Disable Label</string>
+    <string name="title_activity_picture_in_picture">PictureInPictureActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+</resources>

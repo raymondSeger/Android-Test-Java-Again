@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- "Mark Favorite", should appear as action button if possible -->
+    <item
+        android:id="@+id/action_favorite"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Item1"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_favorite2"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Item2"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_favorite3"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Item3"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_favorite4"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Item4"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_favorite5"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Item5"
+        app:showAsAction="ifRoom"/>
+
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/action_settings"
+        android:title="Item6"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.widget.SearchView"
+        />
+
+</menu>
