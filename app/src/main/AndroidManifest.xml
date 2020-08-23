@@ -18,8 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".FragmentsActivity">
+        <activity android:name=".SettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,13 +26,14 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".FragmentsActivity" />
+
         <activity
             android:name=".MainActivity2"
             android:label="@string/title_activity_main2" />
         <activity
             android:name=".AppBarActivity"
-            android:parentActivityName=".ThirdActivity">
-        </activity>
+            android:parentActivityName=".ThirdActivity" />
         <activity android:name=".SnackbarActivity" />
         <activity android:name=".CopyPasteActivity" />
         <activity
