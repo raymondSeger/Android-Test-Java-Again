@@ -18,7 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingActivity">
+        <activity android:name=".ShowModalBottomActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,11 +26,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".FingerprintActivity" />
+        <activity android:name=".SettingActivity" />
         <activity android:name=".FragmentsActivity" />
-
-        <activity
-            android:name=".MainActivity2"
-            android:label="@string/title_activity_main2" />
+        <activity android:name=".MainActivity2" />
         <activity
             android:name=".AppBarActivity"
             android:parentActivityName=".ThirdActivity" />
@@ -38,7 +37,6 @@
         <activity android:name=".CopyPasteActivity" />
         <activity
             android:name=".PictureInPictureActivity"
-            android:label="@string/title_activity_picture_in_picture"
             android:launchMode="singleTask"
             android:supportsPictureInPicture="true" />
         <activity android:name=".WebViewActivity" />
