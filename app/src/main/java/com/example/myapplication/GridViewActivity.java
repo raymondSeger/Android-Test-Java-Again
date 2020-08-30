@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-import info.hoang8f.widget.FButton;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class GridViewActivity extends AppCompatActivity {
 
@@ -42,6 +42,19 @@ public class GridViewActivity extends AppCompatActivity {
         GridView interests_gridview         = (GridView) findViewById(R.id.interests_gridview);
         ArrayList<Interest> interests_data  = new ArrayList<Interest>();
         chosen_interest                     = new HashSet<>();
+
+        // show the dialog
+        new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+                .setTitleText("Attention")
+                .setContentText("Choose at least one interest that you love to follow")
+                .setConfirmText("OK")
+                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sDialog) {
+                        sDialog.dismissWithAnimation();
+                    }
+                })
+                .show();
 
         // !TODO replace with real data from Cloud
         // TEST prepare the gridview data

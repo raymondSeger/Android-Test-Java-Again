@@ -39,11 +39,13 @@ dependencies {
     implementation 'androidx.viewpager:viewpager:1.0.0'
 
 
+
     // Third Parties
     implementation 'fr.avianey.com.viewpagerindicator:library:2.4.1.1@aar'
     implementation 'com.github.medyo:fancybuttons:1.7'
     implementation 'info.hoang8f:fbutton:1.0.5'
     implementation 'com.github.AppIntro:AppIntro:6.0.0'
+    implementation 'com.github.f0ris.sweetalert:library:1.5.1'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
