@@ -30,7 +30,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MenuContextActivity">
+        <activity android:name=".DIalogActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,9 +38,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PickTimeAndDateActivity" />
+        <activity android:name=".MenuContextActivity" />
 
-        <!-- for PhotoActivity -->
+        <activity android:name=".PickTimeAndDateActivity" /> <!-- for PhotoActivity -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.myapplication.fileprovider"
