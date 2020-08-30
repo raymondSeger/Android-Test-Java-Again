@@ -30,16 +30,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".DIalogActivity">
+        <activity android:name=".CirclePageIndicatorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <activity android:name=".DialogActivity" />
         <activity android:name=".MenuContextActivity" />
-
         <activity android:name=".PickTimeAndDateActivity" /> <!-- for PhotoActivity -->
         <provider
             android:name="androidx.core.content.FileProvider"

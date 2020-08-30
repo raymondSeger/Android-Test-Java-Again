@@ -35,8 +35,11 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.preference:preference:1.1.1'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-
     implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    implementation 'fr.avianey.com.viewpagerindicator:library:2.4.1.1@aar'
+    implementation 'com.github.medyo:fancybuttons:1.7'
+    implementation 'androidx.viewpager:viewpager:1.0.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

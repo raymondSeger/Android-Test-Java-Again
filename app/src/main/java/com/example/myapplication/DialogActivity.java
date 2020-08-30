@@ -12,7 +12,7 @@ import com.example.myapplication.fragments.FireMissilesDialogFragment;
 import com.example.myapplication.fragments.MultiChoiceDialogFragment;
 import com.example.myapplication.fragments.SingleChoiceDialogFragment;
 
-public class DIalogActivity extends AppCompatActivity {
+public class DialogActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
