@@ -39,7 +39,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".GradientActivity">
+        <activity android:name=".PressBackAndRateMeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,15 +47,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".GradientActivity" />
         <service android:name=".ExampleService" />
-
-        <activity android:name=".ServiceActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ServiceActivity" />
         <activity android:name=".PlayMusicTwoActivity" />
         <activity android:name=".GoogleSignInActivity" />
         <activity android:name=".GetMetaDataActivity" />
