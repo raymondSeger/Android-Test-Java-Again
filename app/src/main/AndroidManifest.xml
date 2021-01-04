@@ -3,6 +3,7 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
+
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -30,31 +31,24 @@
 
     <uses-feature android:name="android.hardware.camera" />
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".AnimationActivity">
+
+        <activity android:name=".StringFormatterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ConfigurationChangedActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden">
-        </activity>
+        <activity android:name=".ColorStateActivity" />
+        <activity android:name=".AnimationActivity" />
+        <activity android:name=".ConfigurationChangedActivity" android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
         <activity android:name=".ScanQRActivity" />
         <activity android:name=".NavigationBottomActivity" />
         <activity android:name=".ViewModelActivity" />
-        <activity
-            android:name=".TabbedActivity"
-            android:label="@string/title_activity_tabbed"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".TabbedActivity" android:label="@string/title_activity_tabbed" android:theme="@style/AppTheme.NoActionBar" />
+
         <!--
             The API key for Google Maps-based APIs is defined as a string resource.
             (See the file "res/values/google_maps_api.xml").
@@ -63,9 +57,7 @@
             sign the APK for publishing.
             You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_key" />
 
         <activity android:name=".SwipeRefreshLayoutActivity" />
         <activity android:name=".RecyclerViewActivity" />
@@ -93,33 +85,22 @@
         <activity android:name=".FingerprintActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".FragmentsActivity" />
-        <activity
-            android:name=".AppBarActivity"
-            android:parentActivityName=".ThirdActivity" />
+        <activity android:name=".AppBarActivity" android:parentActivityName=".ThirdActivity" />
         <activity android:name=".SnackbarActivity" />
         <activity android:name=".CopyPasteActivity" />
-        <activity
-            android:name=".PictureInPictureActivity"
-            android:launchMode="singleTask"
-            android:supportsPictureInPicture="true" />
+        <activity android:name=".PictureInPictureActivity" android:launchMode="singleTask" android:supportsPictureInPicture="true" />
         <activity android:name=".WebViewActivity" />
         <activity android:name=".SetBroadcastContextActivity" />
 
-        <receiver
-            android:name=".MyBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true">
+        <receiver android:name=".MyBroadcastReceiver" android:enabled="true" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SCREEN_ON" />
             </intent-filter>
         </receiver>
 
         <activity android:name=".PinnedShortcutActivity">
-
             <!-- Should be in LAUNCHER / First Activity -->
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts" />
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts" />
         </activity>
         <activity android:name=".ThirdActivity" />
         <activity android:name=".ReceiveTextActivity" />
@@ -136,6 +117,7 @@
         <activity android:name=".GetLocationDataActivity" />
         <activity android:name=".firstActivity" />
         <activity android:name=".BubbleActivity" />
+
     </application>
 
 </manifest>
