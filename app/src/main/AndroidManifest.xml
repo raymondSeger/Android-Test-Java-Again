@@ -38,12 +38,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".GetMetaDataActivity">
+        <activity android:name=".GoogleSignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".GetMetaDataActivity" />
         <activity android:name=".StringFormatterActivity" />
         <activity android:name=".ColorStateActivity" />
         <activity android:name=".AnimationActivity" />

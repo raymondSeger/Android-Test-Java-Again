@@ -53,6 +53,7 @@ dependencies {
     implementation 'com.github.AppIntro:AppIntro:6.0.0'
     implementation 'com.github.f0ris.sweetalert:library:1.5.1'
     implementation 'com.tiancaicc.springfloatingactionmenu:library:0.0.2'
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
