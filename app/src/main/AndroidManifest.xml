@@ -40,7 +40,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <activity android:name=".TextInputLayoutActivity">
+        <activity android:name=".CircularRevealActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,6 +48,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".AnimationDrawableActivity" />
+        <activity android:name=".TextInputLayoutActivity" />
         <activity android:name=".CustomAutoCompleteTextViewActivity" />
         <activity android:name=".AutoCompleteTextViewActivity" />
         <activity android:name=".SharedElementActivity2" />
