@@ -39,13 +39,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".SpinnerActivity">
+        <activity android:name=".SpinnerCustomObjectActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SpinnerActivity" />
         <activity android:name=".SeekBarActivity" />
         <activity android:name=".DodgeInsetEdgesActivity" />
         <activity android:name=".BottomSheetActivity" />
