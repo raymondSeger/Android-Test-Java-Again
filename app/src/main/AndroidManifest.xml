@@ -40,7 +40,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <activity android:name=".BottomSheetActivity">
+        <activity android:name=".DodgeInsetEdgesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,6 +48,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".BottomSheetActivity" />
         <activity android:name=".PicassoImageSliderActivity" />
         <activity android:name=".ImageSliderActivity" />
         <activity android:name=".MultiAutoCompleteTextViewActivity" />
