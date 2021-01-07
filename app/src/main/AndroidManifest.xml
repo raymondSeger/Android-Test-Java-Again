@@ -39,15 +39,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-
-        <activity android:name=".ImeActivity">
+        <activity android:name=".ClickableSpanActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".ImeActivity" />
         <activity android:name=".TextWatcherActivity" />
         <activity android:name=".SpinnerCustomObjectActivity" />
         <activity android:name=".SpinnerActivity" />
