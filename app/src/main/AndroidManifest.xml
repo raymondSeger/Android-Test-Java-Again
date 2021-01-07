@@ -39,8 +39,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        
-        <activity android:name=".ImageSliderActivity">
+
+        <activity android:name=".PicassoImageSliderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,6 +48,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ImageSliderActivity" />
         <activity android:name=".MultiAutoCompleteTextViewActivity" />
         <activity android:name=".YoyoActivity" />
         <activity android:name=".CustomButtonActivity" />
