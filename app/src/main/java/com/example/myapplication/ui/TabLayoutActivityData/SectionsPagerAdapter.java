@@ -33,6 +33,25 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         bundle.putString("data_for_fragment", the_tab_titles[position]);
         fragment.setArguments(bundle);
         return fragment;
+
+        /*
+        Use this if you want to use custom fragments
+
+        Fragment fragment = null;
+        switch (position) {
+            case 0:
+                fragment = new Frag1();
+                break;
+            case 1:
+                fragment = new Frag2();
+                break;
+            case 2:
+                fragment = new Frag3();
+                break;
+        }
+        return fragment;
+         */
+
     }
 
     @Nullable
