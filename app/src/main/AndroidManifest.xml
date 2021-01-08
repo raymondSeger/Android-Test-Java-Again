@@ -39,14 +39,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".Slidr2Activity" android:theme="@style/AppTheme.SlidrActivityTheme"></activity>
-        <activity android:name=".SlidrActivity">
+
+        <activity android:name=".GSONActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".Slidr2Activity"
+            android:theme="@style/AppTheme.SlidrActivityTheme" />
+        <activity android:name=".SlidrActivity" />
         <activity android:name=".ViewFlipperActivity" />
         <activity android:name=".ColorSeekBarActivity" />
         <activity android:name=".FragmentWithAnimationActivity" />
