@@ -39,14 +39,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-
-        <activity android:name=".GSONActivity">
+        <activity android:name=".CircularProgressBarActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".GSONActivity" />
         <activity
             android:name=".Slidr2Activity"
             android:theme="@style/AppTheme.SlidrActivityTheme" />
