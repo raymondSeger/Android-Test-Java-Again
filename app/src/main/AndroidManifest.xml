@@ -46,13 +46,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CountDownTimerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".CountDownTimerActivity" />
         <activity android:name=".ChronometerActivity" />
         <activity android:name=".CalendarAddActivity" />
         <activity android:name=".ChooseColorActivity" />
