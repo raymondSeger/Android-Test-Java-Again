@@ -39,13 +39,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".SaveTextFileActivity">
+        <activity android:name=".OkHttpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SaveTextFileActivity" />
         <activity android:name=".RecyclerViewWithEditTextSearchActivity" />
         <activity android:name=".RecyclerViewWithSearchViewActivity" />
         <activity android:name=".RecyclerViewActivity2" />
