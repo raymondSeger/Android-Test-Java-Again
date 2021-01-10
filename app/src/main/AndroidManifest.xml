@@ -40,7 +40,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <activity android:name=".RecyclerViewActivity2">
+        <activity android:name=".RecyclerViewWithSearchViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,6 +48,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".RecyclerViewActivity2" />
         <activity android:name=".SlideAnimationActivity2" />
         <activity android:name=".SlideAnimationActivity" />
         <activity android:name=".IntentAnimationActivity" />
