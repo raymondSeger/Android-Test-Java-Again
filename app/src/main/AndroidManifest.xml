@@ -39,13 +39,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".StyleableToastActivity">
+        <activity android:name=".RandomizedColorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".StyleableToastActivity" />
         <activity android:name=".GSONSharedPreferencesActivity" />
         <activity android:name=".AlerterActivity" />
         <activity android:name=".ToastyActivity" />
