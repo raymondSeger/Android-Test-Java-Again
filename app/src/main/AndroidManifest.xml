@@ -39,15 +39,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".DetailRecyclerViewWithPicassoActivity">
-        </activity>
-        <activity android:name=".RecyclerViewWithPicassoActivity" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".BundleDataForActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".DetailRecyclerViewWithPicassoActivity" />
+        <activity android:name=".RecyclerViewWithPicassoActivity" />
         <activity android:name=".SharedViewModelActivity" />
         <activity android:name=".SortingArrayActivity" />
         <activity android:name=".CountDownTimerActivity" />
