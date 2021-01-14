@@ -39,13 +39,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".FlowingDrawerActivity">
+
+        <activity android:name=".WidgetActivity" android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".widget.ExampleAppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/example_appwidget_info" />
+        </receiver>
+
+        <activity android:name=".FlowingDrawerActivity" />
         <activity
             android:name=".NavigationDrawerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
