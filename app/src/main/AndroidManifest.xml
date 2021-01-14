@@ -39,15 +39,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-
-        <activity android:name=".LooperThreadActivity">
+        <activity android:name=".ThreadAndRunnableActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".LooperThreadActivity" />
         <activity android:name=".HandlerThreadActivity" />
         <activity android:name=".AsyncTaskActivity" />
         <activity android:name=".PostDelayedActivity" />
