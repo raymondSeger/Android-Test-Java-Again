@@ -41,17 +41,20 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <service
-            android:name=".services.ExampleJobIntentService"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
-
-        <activity android:name=".JobIntentServiceActivity">
+        <receiver android:name=".receivers.AlertReceiver" />
+        <activity android:name=".AlarmManagerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".services.ExampleJobIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity android:name=".JobIntentServiceActivity" />
 
         <service
             android:name=".services.ExampleJobService"
