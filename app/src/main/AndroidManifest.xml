@@ -40,13 +40,15 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <activity android:name=".PostDelayedActivity">
+        <activity android:name=".AsyncTaskActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".PostDelayedActivity" />
 
         <receiver android:name=".widget.ExampleAppWidgetProvider3">
             <intent-filter>
@@ -65,8 +67,7 @@
         </activity>
         <activity
             android:name=".WidgetResizeActivity"
-            android:launchMode="singleTop">
-        </activity>
+            android:launchMode="singleTop"></activity>
 
         <receiver android:name=".widget.ExampleAppWidgetProvider2">
             <intent-filter>
