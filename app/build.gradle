@@ -67,6 +67,8 @@ dependencies {
     implementation 'com.github.GrenderG:Toasty:1.5.0'
     implementation 'com.tapadoo.android:alerter:1.0.6'
     implementation 'com.muddzdev:styleabletoast:2.2.4'
+    implementation 'com.mxn.soul:flowingdrawer-core:2.1.0'
+    implementation 'com.nineoldandroids:library:2.4.0'
 
     //testImplementation 'junit:junit:4.12'
     //androidTestImplementation 'androidx.test.ext:junit:1.1.2'
