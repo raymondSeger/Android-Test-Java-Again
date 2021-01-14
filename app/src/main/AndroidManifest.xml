@@ -39,8 +39,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-
-        <activity android:name=".WidgetActivity" android:launchMode="singleTop">
+        <activity android:name=".ExampleAppWidgetConfig"></activity>
+        <activity android:name=".WidgetActivity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,10 +48,25 @@
             </intent-filter>
         </activity>
 
+        <receiver android:name=".widget.ExampleAppWidgetProvider2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/example_appwidget_info_2" />
+        </receiver>
+
+        <activity
+            android:name=".WidgetActivity"
+            android:launchMode="singleTop" />
+
         <receiver android:name=".widget.ExampleAppWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
+
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/example_appwidget_info" />
