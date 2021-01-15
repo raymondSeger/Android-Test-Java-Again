@@ -40,7 +40,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        
+
+        <activity android:name=".ExampleAppWidgetConfig4">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".widget.ExampleAppWidgetProvider4">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/example_appwidget_info" />
+        </receiver>
+
+        <service
+            android:name=".widget.ExampleWidgetService4"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
         <activity android:name=".ImplicitBroadcastSenderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,7 +68,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ImplicitBroadcastReceiverActivity" />
         <activity android:name=".RegisterBroadcastActivity" />
 
