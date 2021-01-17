@@ -41,20 +41,26 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <activity android:name=".DeepLinkActivity">
+        <activity android:name=".DetectGestureActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="www.example.com" />
-            </intent-filter>
-
         </activity>
 
+        <activity android:name=".DeepLinkActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.example.com"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ImplicitIntentHandleActivity">
 
             <!-- This activity handles "SEND" actions with text data -->
@@ -66,8 +72,7 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-        <activity android:name=".StartImplicitIntentActivity">
-        </activity>
+        <activity android:name=".StartImplicitIntentActivity"></activity>
         <activity android:name=".AnimatorExampleActivity" />
         <activity android:name=".ExampleAppWidgetConfig5">
             <intent-filter>
