@@ -22,4 +22,14 @@
         android:layout_toRightOf="@+id/btnOn"
         android:text="Turn OFF" />
 
+    <Button
+        android:id="@+id/findDevice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnOn"
+        android:layout_marginLeft="-53dp"
+        android:layout_marginBottom="-78dp"
+        android:layout_toRightOf="@+id/btnOn"
+        android:text="Find Devices" />
+
 </RelativeLayout>
