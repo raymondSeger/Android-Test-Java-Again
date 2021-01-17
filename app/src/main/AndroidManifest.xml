@@ -42,13 +42,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".BluetoothOnOrOffActivity">
+
+        <activity android:name=".GridLayoutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".BluetoothOnOrOffActivity" />
         <activity android:name=".TableLayoutActivity" />
         <activity android:name=".DatabaseActivity" />
         <activity android:name=".CrossfadeActivity" />
