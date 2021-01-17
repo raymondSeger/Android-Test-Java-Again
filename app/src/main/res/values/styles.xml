@@ -53,4 +53,18 @@
         <item name="stRadius">5dp</item>
     </style>
 
+    <style name="TextviewStyle">
+        <item name="android:textColor">#AEAE1E</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <style name="TextviewStyle2">
+        <item name="android:textColor">#CA0D4E</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">17dp</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
 </resources>
