@@ -41,7 +41,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <activity android:name=".ViewPager2Activity">
+        <activity android:name=".CrossfadeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -49,6 +49,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ViewPager2Activity" />
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".AnimatorActivity" />
         <activity android:name=".DetectGestureActivity" />
