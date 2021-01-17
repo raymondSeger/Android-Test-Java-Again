@@ -41,7 +41,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <activity android:name=".ViewPagerActivity">
+        <activity android:name=".ViewPager2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -49,6 +49,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ViewPagerActivity" />
         <activity android:name=".AnimatorActivity" />
         <activity android:name=".DetectGestureActivity" />
         <activity android:name=".DeepLinkActivity">
@@ -68,7 +69,9 @@
             <!-- This activity handles "SEND" actions with text data -->
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
