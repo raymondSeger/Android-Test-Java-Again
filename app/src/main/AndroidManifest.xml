@@ -42,13 +42,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".DragAndDropActivity">
+
+        <!-- Recommended for Android 9 (API level 28) and lower. -->
+        <!-- Required for Android 10 (API level 29) and higher. -->
+        <service
+            android:name=".services.MyNavigationService"
+            android:foregroundServiceType="location">
+        <!-- Any inner elements would go here. -->
+        </service>
+
+        <activity android:name=".LocationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DragAndDropActivity" />
         <activity android:name=".StyleOnViewActivity" />
         <activity android:name=".GridLayoutActivity" />
         <activity android:name=".BluetoothOnOrOffActivity" />
