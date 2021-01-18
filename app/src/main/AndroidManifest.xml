@@ -43,21 +43,33 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <!-- Recommended for Android 9 (API level 28) and lower. -->
-        <!-- Required for Android 10 (API level 29) and higher. -->
-        <service
-            android:name=".services.MyNavigationService"
-            android:foregroundServiceType="location">
-        <!-- Any inner elements would go here. -->
-        </service>
-
-        <activity android:name=".LocationActivity">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.myapplication.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
+        <activity android:name=".CameraActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Recommended for Android 9 (API level 28) and lower. -->
+        <!-- Required for Android 10 (API level 29) and higher. -->
+        <service
+            android:name=".services.MyNavigationService"
+            android:foregroundServiceType="location">
+
+            <!-- Any inner elements would go here. -->
+        </service>
+
+        <activity android:name=".LocationActivity" />
         <activity android:name=".DragAndDropActivity" />
         <activity android:name=".StyleOnViewActivity" />
         <activity android:name=".GridLayoutActivity" />
