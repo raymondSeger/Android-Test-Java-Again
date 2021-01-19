@@ -51,6 +51,7 @@ dependencies {
     implementation 'com.facebook.android:facebook-android-sdk:4.40.0'
     // Twitter. Find the latest Twitter SDK releases here: https://goo.gl/E5wZvQ
     implementation 'com.twitter.sdk.android:twitter-core:3.3.0'
+    implementation 'com.google.firebase:firebase-database'
 
 
     // Google Play
