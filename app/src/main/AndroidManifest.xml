@@ -42,20 +42,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".FirestoreActivity">
+        <activity android:name=".FirebaseStorageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FirebaseRealTimeDatabaseActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".FirestoreActivity" />
+        <activity android:name=".FirebaseRealTimeDatabaseActivity" />
         <activity android:name=".FirebaseAuthUIActivity" />
         <activity android:name=".FirebaseAnalyticsActivity" />
         <activity android:name=".MotionTagActivity" />
