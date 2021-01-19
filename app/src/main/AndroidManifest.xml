@@ -42,13 +42,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".MotionTagActivity">
+        <activity android:name=".FirebaseAnalyticsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MotionTagActivity" />
+
         <activity android:name=".RecordVideoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
