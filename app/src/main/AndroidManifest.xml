@@ -42,6 +42,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
+        <activity android:name=".FirebaseAuthUIActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".FirebaseAnalyticsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,9 +56,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".MotionTagActivity" />
-
         <activity android:name=".RecordVideoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -73,7 +78,7 @@
         <activity android:name=".CameraActivity" /> <!-- Recommended for Android 9 (API level 28) and lower. Required for Android 10 (API level 29) and higher. -->
         <service
             android:name=".services.MyNavigationService"
-            android:foregroundServiceType="location"></service>
+            android:foregroundServiceType="location" />
 
         <activity android:name=".LocationActivity" />
         <activity android:name=".DragAndDropActivity" />
