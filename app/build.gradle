@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 // firebase
 apply plugin: 'com.google.gms.google-services'
+// Apply the Crashlytics Gradle plugin
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion 30
@@ -45,6 +47,7 @@ dependencies {
 
     // Firebase
     implementation platform('com.google.firebase:firebase-bom:26.3.0')
+    implementation 'com.google.firebase:firebase-crashlytics'
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.firebaseui:firebase-ui-auth:6.4.0'
     // Facebook. Find the latest Facebook SDK releases here: https://goo.gl/Ce5L94
