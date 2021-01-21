@@ -42,20 +42,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-
-        <activity android:name=".TryBackButtonActivity4" />
-        <activity android:name=".TryBackButtonActivity3" />
-        <activity android:name=".TryBackButtonActivity2" />
-        <activity android:name=".TryBackButtonActivity">
+        <activity android:name=".TestBackOnFragmentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TryBackButtonActivity4" />
+        <activity android:name=".TryBackButtonActivity3" />
+        <activity android:name=".TryBackButtonActivity2" />
+        <activity android:name=".TryBackButtonActivity" />
+
         <!--
-     Set custom default icon. This is used when no icon is set for incoming notification messages.
-     See README(https://goo.gl/l4GJaQ) for more.
+         Set custom default icon. This is used when no icon is set for incoming notification messages.
+         See README(https://goo.gl/l4GJaQ) for more.
         -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
