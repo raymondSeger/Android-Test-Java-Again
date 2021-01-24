@@ -42,24 +42,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-
-        <activity android:name=".MLKitBarcodeScannerActivity">
+        <activity android:name=".FirebaseInAppMessagingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
+        </activity>
+        <activity android:name=".MLKitBarcodeScannerActivity">
             <meta-data
                 android:name="com.google.mlkit.vision.DEPENDENCIES"
                 android:value="barcode" />
         </activity>
-
         <activity android:name=".MLKitDetectFaceActivity">
             <meta-data
                 android:name="com.google.mlkit.vision.DEPENDENCIES"
                 android:value="face" />
         </activity>
-
         <activity android:name=".MLKitSmartReplyActivity" />
         <activity android:name=".MLKitTranslateTextActivity" />
         <activity android:name=".MLKitIdentifyLanguageActivity" />
