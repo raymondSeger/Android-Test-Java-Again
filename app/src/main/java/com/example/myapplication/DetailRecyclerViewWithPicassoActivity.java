@@ -28,7 +28,7 @@ public class DetailRecyclerViewWithPicassoActivity extends AppCompatActivity {
         TextView textViewCreator    = findViewById(R.id.text_view_creator_detail);
         TextView textViewLikes      = findViewById(R.id.text_view_like_detail);
 
-        Picasso.with(this).load(imageUrl).fit().centerInside().into(imageView);
+        Picasso.get().load(imageUrl).fit().centerInside().into(imageView);
 
         textViewCreator.setText(creatorName);
         textViewLikes.setText("Likes: " + likeCount);

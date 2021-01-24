@@ -63,14 +63,14 @@ public class PhotoActivity extends AppCompatActivity {
 
         if (requestCode == 47 && resultCode == RESULT_OK) {
             // show the picture
-            Picasso.with( PhotoActivity.this ).load( new File(currentPhotoPath) ).into(image_view, new Callback() {
+            Picasso.get().load( new File(currentPhotoPath) ).into(image_view, new Callback() {
                 @Override
                 public void onSuccess() {
                     Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
-                public void onError() {
+                public void onError(Exception e) {
                     Toast.makeText(getApplicationContext(), "failed to load image", Toast.LENGTH_SHORT).show();
                 }
             });
@@ -106,7 +106,7 @@ public class PhotoActivity extends AppCompatActivity {
                 public void onActivityResult(ActivityResult result) {
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         final Intent the_intent = result.getData();
-                        Picasso.with( PhotoActivity.this ).load( the_intent.getData() ).into(image_view);
+                        Picasso.get().load( the_intent.getData() ).into(image_view);
                     }
                 }
         });
@@ -152,14 +152,14 @@ public class PhotoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Picasso.with( PhotoActivity.this ).load("https://cdn.mos.cms.futurecdn.net/LHcG66TebAwFGeaXRMRh7n.jpg").into(image_view, new Callback() {
+                Picasso.get().load("https://cdn.mos.cms.futurecdn.net/LHcG66TebAwFGeaXRMRh7n.jpg").into(image_view, new Callback() {
                     @Override
                     public void onSuccess() {
                         Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
-                    public void onError() {
+                    public void onError(Exception e) {
                         Toast.makeText(getApplicationContext(), "failed to load image", Toast.LENGTH_SHORT).show();
                     }
                 });

@@ -46,7 +46,7 @@ public class ExampleItemAdapter3 extends RecyclerView.Adapter<ExampleItemAdapter
 
         holder.mTextViewCreator.setText(creatorName);
         holder.mTextViewLikes.setText("Likes: " + likeCount);
-        Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.mImageView);
+        Picasso.get().load(imageUrl).fit().centerInside().into(holder.mImageView);
     }
 
     @Override
