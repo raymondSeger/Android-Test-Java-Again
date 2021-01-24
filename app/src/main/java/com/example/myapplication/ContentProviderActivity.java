@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.UserDictionary;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -27,6 +28,21 @@ public class ContentProviderActivity extends AppCompatActivity {
         values.put(StudentsProvider.GRADE, ((EditText)findViewById(R.id.editText3)).getText().toString());
         Uri uri = getContentResolver().insert( StudentsProvider.CONTENT_URI, values);
         Toast.makeText(getBaseContext(), uri.toString(), Toast.LENGTH_LONG).show();
+    }
+
+    public void onClickDeleteName(View view) {
+        String selectionClause  = StudentsProvider.NAME + " LIKE ?";
+        String the_name         = ( (EditText) findViewById(R.id.editText2) ).getText().toString();
+        String[] selectionArgs  = { the_name }; // will search by name
+        // Defines a variable to contain the number of rows deleted
+        int rowsDeleted         = 0;
+
+        // delete a new student record
+        ContentValues values = new ContentValues();
+        values.put(StudentsProvider.NAME, ((EditText)findViewById(R.id.editText2)).getText().toString());
+        values.put(StudentsProvider.GRADE, ((EditText)findViewById(R.id.editText3)).getText().toString());
+        rowsDeleted = getContentResolver().delete( StudentsProvider.CONTENT_URI, selectionClause, selectionArgs);
+        Toast.makeText(getBaseContext(), String.valueOf(rowsDeleted), Toast.LENGTH_LONG).show();
     }
 
     public void onClickRetrieveStudents(View view) {
