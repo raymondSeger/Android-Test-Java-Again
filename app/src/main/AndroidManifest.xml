@@ -3,7 +3,6 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -44,19 +43,25 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <provider
-            android:name=".providers.StudentsProvider"
-            android:authorities="com.example.myapplication.StudentsProvider"
-            android:enabled="true"
-            android:exported="true" />
 
-        <activity android:name=".ContentProviderActivity">
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="ocr" />
+        <activity android:name=".MLTextRecognitionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name=".providers.StudentsProvider"
+            android:authorities="com.example.myapplication.StudentsProvider"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ContentProviderActivity" />
         <activity android:name=".TestBackOnFragmentActivity" />
         <activity android:name=".TryBackButtonActivity4" />
         <activity android:name=".TryBackButtonActivity3" />
