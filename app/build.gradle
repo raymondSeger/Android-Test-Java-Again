@@ -23,6 +23,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    // for 'com.google.mlkit:smart-reply:16.1.1'
+    aaptOptions {
+        noCompress "tflite"
+    }
 }
 
 dependencies {
@@ -71,6 +76,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-mlkit-text-recognition:16.1.2'
     implementation 'com.google.mlkit:language-id:16.1.1'
     implementation 'com.google.mlkit:translate:16.1.1'
+    implementation 'com.google.mlkit:smart-reply:16.1.1'
 
     // Third Parties
     implementation 'fr.avianey.com.viewpagerindicator:library:2.4.1.1@aar'
