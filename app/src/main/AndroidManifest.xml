@@ -42,21 +42,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".MLKitSmartReplyActivity">
+        <activity android:name=".MLKitDetectFaceActivity">
+
+            <meta-data
+                android:name="com.google.mlkit.vision.DEPENDENCIES"
+                android:value="face" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MLKitSmartReplyActivity" />
         <activity android:name=".MLKitTranslateTextActivity" />
         <activity android:name=".MLKitIdentifyLanguageActivity" />
-
-        <meta-data
-            android:name="com.google.mlkit.vision.DEPENDENCIES"
-            android:value="ocr" />
-
-        <activity android:name=".MLTextRecognitionActivity" />
+        <activity android:name=".MLTextRecognitionActivity">
+            <meta-data
+                android:name="com.google.mlkit.vision.DEPENDENCIES"
+                android:value="ocr" />
+        </activity>
 
         <provider
             android:name=".providers.StudentsProvider"

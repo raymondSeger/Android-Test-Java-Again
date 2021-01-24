@@ -65,11 +65,11 @@ public class MLTextRecognitionActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK) {
             Uri selectedImageUri    = data.getData();
             String s                = getRealPathFromURI(selectedImageUri);
-            faceDetector( s );
+            textDetector( s );
         }
     }
 
-    private void faceDetector(String s) {
+    private void textDetector(String s) {
         InputImage image;
         try {
             File imgFile                = new  File(s);
