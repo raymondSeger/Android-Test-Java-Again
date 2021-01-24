@@ -42,14 +42,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-
-        <activity android:name=".MLKitIdentifyLanguageActivity">
+        <activity android:name=".MLKitTranslateTextActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MLKitIdentifyLanguageActivity" />
 
         <meta-data
             android:name="com.google.mlkit.vision.DEPENDENCIES"
