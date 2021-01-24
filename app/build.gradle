@@ -69,6 +69,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-vision:20.1.3'
     // implementation 'com.google.android.gms:play-services-ads:19.3.0'
     implementation 'com.google.android.gms:play-services-mlkit-text-recognition:16.1.2'
+    implementation 'com.google.mlkit:language-id:16.1.1'
+
 
     // Third Parties
     implementation 'fr.avianey.com.viewpagerindicator:library:2.4.1.1@aar'
