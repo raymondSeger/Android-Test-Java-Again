@@ -45,6 +45,29 @@ public class ContentProviderActivity extends AppCompatActivity {
         Toast.makeText(getBaseContext(), String.valueOf(rowsDeleted), Toast.LENGTH_LONG).show();
     }
 
+    public void onClickUpdateStudents(View view) {
+        // Defines an object to contain the updated values
+        ContentValues updateValues = new ContentValues();
+        updateValues.put(StudentsProvider.NAME, ((EditText)findViewById(R.id.editText2)).getText().toString());
+        updateValues.put(StudentsProvider.GRADE, ((EditText)findViewById(R.id.editText3)).getText().toString());
+
+        // Defines selection criteria for the rows you want to update
+        String selectionClause  = StudentsProvider.NAME +  " LIKE ?";
+        String the_name         = ( (EditText) findViewById(R.id.editText2) ).getText().toString();
+        String[] selectionArgs  = { the_name };
+
+        // Defines a variable to contain the number of updated rows
+        int rowsUpdated = 0;
+        rowsUpdated     = getContentResolver().update(
+                StudentsProvider.CONTENT_URI,   // the user dictionary content URI
+                updateValues,                      // the columns to update
+                selectionClause,                   // the column to select on
+                selectionArgs                      // the value to compare to
+        );
+
+        Toast.makeText(getBaseContext(), String.valueOf(rowsUpdated), Toast.LENGTH_LONG).show();
+    }
+
     public void onClickRetrieveStudents(View view) {
         // Retrieve student records
         String URL = "content://com.example.myapplication.StudentsProvider";
