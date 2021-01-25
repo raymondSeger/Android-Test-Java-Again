@@ -23,7 +23,6 @@ public class ChangeFragmentActivity extends AppCompatActivity {
         FrameLayout frame_layout        = (FrameLayout) findViewById(R.id.frame_layout);
         Button change_fragment_btn_1    = (Button) findViewById(R.id.change_fragment_btn_1);
         Button change_fragment_btn_2    = (Button) findViewById(R.id.change_fragment_btn_2);
-        Button change_fragment_btn_3    = (Button) findViewById(R.id.change_fragment_btn_3);
 
         change_fragment_btn_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,7 +36,14 @@ public class ChangeFragmentActivity extends AppCompatActivity {
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout, newFragment, "tag1");
                 transaction.commit();
-                transaction.addToBackStack(null);
+                // transaction.addToBackStack(null);
+
+                /*
+                 You said that when you go to fragment 1 and press back button it return back to fragment 2.
+                 That's because you add fragmentTransaction.addToBackStack(null); to the first fragment fragment.
+                  So when you come back to fragment 1, android add fragment 2 in back stack of fragment 1.
+                  So when you press back button it returns back to fragment 2.
+                 */
             }
         });
 
@@ -53,7 +59,7 @@ public class ChangeFragmentActivity extends AppCompatActivity {
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout, newFragment, "tag1");
                 transaction.commit();
-                transaction.addToBackStack(null);
+                // transaction.addToBackStack(null);
 
             }
         });
