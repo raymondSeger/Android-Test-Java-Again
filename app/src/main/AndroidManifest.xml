@@ -31,10 +31,11 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -47,6 +48,14 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
+        <activity android:name=".ReadWriteCallLogsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <receiver
             android:name=".receivers.ReceiveSMS"
             android:enabled="true"
@@ -57,15 +66,8 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ReadWriteSMSActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".FileSaveReadDeleteActivity">
-        </activity>
+        <activity android:name=".ReadWriteSMSActivity" />
+        <activity android:name=".FileSaveReadDeleteActivity" />
         <activity android:name=".SavePictureToGalleryActivity" />
         <activity android:name=".MLKitObjectDetectionActivity" />
         <activity android:name=".MLKitImageLabelActivity">
