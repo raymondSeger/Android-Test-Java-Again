@@ -49,9 +49,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SavePictureToGalleryActivity">
-        </activity>
-        <activity android:name=".MLKitObjectDetectionActivity"></activity>
+
+        <activity android:name=".SavePictureToGalleryActivity" />
+        <activity android:name=".MLKitObjectDetectionActivity" />
         <activity android:name=".MLKitImageLabelActivity">
             <meta-data
                 android:name="com.google.mlkit.vision.DEPENDENCIES"
