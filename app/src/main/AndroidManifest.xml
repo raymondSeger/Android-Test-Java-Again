@@ -37,6 +37,7 @@
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
     <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+
     <uses-feature android:name="android.hardware.camera" />
 
     <application
@@ -47,7 +48,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".GetCurrentPhoneNumberActivity">
+
+        <activity android:name=".SensorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -55,6 +57,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".GetCurrentPhoneNumberActivity" />
         <activity android:name=".ReadWriteCallLogsActivity" />
 
         <receiver
