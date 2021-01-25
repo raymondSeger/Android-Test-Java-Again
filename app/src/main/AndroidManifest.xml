@@ -42,6 +42,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
+        <activity android:name=".MLKitImageLabelActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="com.google.mlkit.vision.DEPENDENCIES"
+                android:value="ica" />
+        </activity>
 
         <activity android:name=".CameraXActivity">
         </activity>
@@ -56,14 +66,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".CameraActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+        <activity android:name=".CameraActivity"></activity>
         <activity android:name=".FirebaseInAppMessagingActivity" />
         <activity android:name=".MLKitBarcodeScannerActivity">
             <meta-data
@@ -133,9 +136,7 @@
         <activity android:name=".FirebaseAuthUIActivity" />
         <activity android:name=".FirebaseAnalyticsActivity" />
         <activity android:name=".MotionTagActivity" />
-        <activity android:name=".RecordVideoActivity" />
-
-        <!-- Recommended for Android 9 (API level 28) and lower. Required for Android 10 (API level 29) and higher. -->
+        <activity android:name=".RecordVideoActivity" /> <!-- Recommended for Android 9 (API level 28) and lower. Required for Android 10 (API level 29) and higher. -->
         <service
             android:name=".services.MyNavigationService"
             android:foregroundServiceType="location" />
@@ -411,9 +412,7 @@
         <activity android:name=".DialogActivity" />
         <activity android:name=".MenuContextActivity" />
         <activity android:name=".PickTimeAndDateActivity" /> <!-- for PhotoActivity -->
-
-        <activity android:name=".PhotoActivity">
-        </activity>
+        <activity android:name=".PhotoActivity"></activity>
         <activity android:name=".RecordVoicePlayVoiceActivity" />
         <activity android:name=".TextToSpeechActivity" />
         <activity android:name=".ShowModalBottomActivity" />
