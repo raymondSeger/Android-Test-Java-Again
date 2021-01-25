@@ -55,9 +55,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChangeFragmentActivity">
-        </activity>
-        <activity android:name=".SensorActivity"></activity>
+
+        <activity android:name=".ChangeFragmentActivity" />
+        <activity android:name=".SensorActivity" />
         <activity android:name=".GetCurrentPhoneNumberActivity" />
         <activity android:name=".ReadWriteCallLogsActivity" />
 
@@ -144,7 +144,7 @@
         <meta-data
             android:name="firebase_analytics_collection_enabled"
             android:value="true" />
-
+        
         <service
             android:name=".services.MyFirebaseMessagingService"
             android:exported="false">
