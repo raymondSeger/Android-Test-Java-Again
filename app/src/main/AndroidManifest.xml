@@ -46,6 +46,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
+
+        <receiver
+            android:name=".receivers.ReceiveSMS"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
         <activity android:name=".ReadWriteSMSActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

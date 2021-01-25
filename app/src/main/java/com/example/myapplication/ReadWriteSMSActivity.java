@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import static android.Manifest.permission.READ_SMS;
+import static android.Manifest.permission.RECEIVE_SMS;
 import static android.Manifest.permission.SEND_SMS;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
@@ -50,6 +51,17 @@ public class ReadWriteSMSActivity extends AppCompatActivity {
 
         Button read_sms_btn     = (Button) findViewById(R.id.read_sms_btn);
         Button write_sms_btn    = (Button) findViewById(R.id.write_sms_btn);
+        Button receive_sms_btn  = (Button) findViewById(R.id.receive_sms_btn);
+
+        receive_sms_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ActivityCompat.checkSelfPermission(ReadWriteSMSActivity.this, RECEIVE_SMS) != PackageManager.PERMISSION_GRANTED ) {
+                    ActivityCompat.requestPermissions(ReadWriteSMSActivity.this, new String[] { RECEIVE_SMS }, 1);
+                    return;
+                }
+            }
+        });
 
         read_sms_btn.setOnClickListener(new View.OnClickListener() {
             @Override
