@@ -32,6 +32,10 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <uses-feature android:name="android.hardware.camera" />
 
     <application
@@ -42,14 +46,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".FileSaveReadDeleteActivity">
+        <activity android:name=".ReadWriteSMSActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".FileSaveReadDeleteActivity">
+        </activity>
         <activity android:name=".SavePictureToGalleryActivity" />
         <activity android:name=".MLKitObjectDetectionActivity" />
         <activity android:name=".MLKitImageLabelActivity">
