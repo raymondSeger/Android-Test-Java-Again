@@ -48,15 +48,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".ChangeFragmentActivity">
+        <activity android:name=".CallPhoneAndDialSimpleVersionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SensorActivity">
+        <activity android:name=".ChangeFragmentActivity">
         </activity>
+        <activity android:name=".SensorActivity"></activity>
         <activity android:name=".GetCurrentPhoneNumberActivity" />
         <activity android:name=".ReadWriteCallLogsActivity" />
 
