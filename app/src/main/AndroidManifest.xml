@@ -42,19 +42,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".MLKitImageLabelActivity">
+        <activity android:name=".MLKitObjectDetectionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MLKitImageLabelActivity">
             <meta-data
                 android:name="com.google.mlkit.vision.DEPENDENCIES"
                 android:value="ica" />
         </activity>
-
-        <activity android:name=".CameraXActivity">
-        </activity>
+        <activity android:name=".CameraXActivity"></activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -66,7 +66,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".CameraActivity"></activity>
+        <activity android:name=".CameraActivity" />
         <activity android:name=".FirebaseInAppMessagingActivity" />
         <activity android:name=".MLKitBarcodeScannerActivity">
             <meta-data
@@ -412,7 +412,7 @@
         <activity android:name=".DialogActivity" />
         <activity android:name=".MenuContextActivity" />
         <activity android:name=".PickTimeAndDateActivity" /> <!-- for PhotoActivity -->
-        <activity android:name=".PhotoActivity"></activity>
+        <activity android:name=".PhotoActivity" />
         <activity android:name=".RecordVoicePlayVoiceActivity" />
         <activity android:name=".TextToSpeechActivity" />
         <activity android:name=".ShowModalBottomActivity" />
