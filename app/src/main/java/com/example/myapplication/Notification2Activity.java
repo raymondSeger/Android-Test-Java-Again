@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -24,7 +25,7 @@ public class Notification2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_notification2);
 
         Button notification_button_1 = (Button) findViewById(R.id.notification_button_1);
-
+        Button notification_button_2 = (Button) findViewById(R.id.notification_button_2);
 
         notification_button_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,7 +34,73 @@ public class Notification2Activity extends AppCompatActivity {
             }
         });
 
+        notification_button_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_notification_2();
+            }
+        });
+
     }
+
+    private void show_notification_2() {
+
+        //use constant ID for notification used as group summary
+        int SUMMARY_ID              = 1;
+        String GROUP_KEY_WORK_EMAIL = "com.example_myapplication.WORK_EMAIL";
+        String channelId            = "channel_name_2";
+
+        Notification newMessageNotification1 =
+                new NotificationCompat.Builder(Notification2Activity.this, channelId)
+                        .setSmallIcon(R.drawable.flag_afghanistan)
+                        .setContentTitle("content 1")
+                        .setContentText("You will not believe...")
+                        .setGroup(GROUP_KEY_WORK_EMAIL)
+                        .build();
+
+        Notification newMessageNotification2 =
+                new NotificationCompat.Builder(Notification2Activity.this, channelId)
+                        .setSmallIcon(R.drawable.flag_indonesia)
+                        .setContentTitle("Content 2")
+                        .setContentText("Please join us to celebrate the...")
+                        .setGroup(GROUP_KEY_WORK_EMAIL)
+                        .build();
+
+        Notification summaryNotification =
+                new NotificationCompat.Builder(Notification2Activity.this, channelId)
+                        .setContentTitle("Content 3")
+                        //set content text to support devices running API level < 24
+                        .setContentText("Two new messages")
+                        .setSmallIcon(R.drawable.flag_albania)
+                        //build summary info into InboxStyle template
+                        .setStyle(new NotificationCompat.InboxStyle()
+                                .addLine("Alex Faarborg  Check this out")
+                                .addLine("Jeff Chang    Launch Party")
+                                .setBigContentTitle("2 new messages")
+                                .setSummaryText("janedoe@example.com"))
+                        //specify which group this notification belongs to
+                        .setGroup(GROUP_KEY_WORK_EMAIL)
+                        //set this notification as the summary for the group
+                        .setGroupSummary(true)
+                        .build();
+
+
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+
+        // Since android Oreo notification channel is needed.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(channelId, "Importance is high", NotificationManager.IMPORTANCE_HIGH);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        notificationManager.notify(3, newMessageNotification1);
+        notificationManager.notify(4, newMessageNotification2);
+        notificationManager.notify(SUMMARY_ID, summaryNotification);
+
+
+    }
+
 
     private void show_notification_1() {
 
