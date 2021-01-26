@@ -3,15 +3,15 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
+
+    <dist:module dist:instant="true" />
+
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <dist:module dist:instant="true" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -40,9 +40,7 @@
     <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
     <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
-    <uses-permission
-        android:name="android.permission.BIND_WALLPAPER"
-        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.BIND_WALLPAPER" tools:ignore="ProtectedPermissions" />
 
     <uses-feature
         android:name="android.software.live_wallpaper"
@@ -195,7 +193,9 @@
         <activity android:name=".FirebaseAuthUIActivity" />
         <activity android:name=".FirebaseAnalyticsActivity" />
         <activity android:name=".MotionTagActivity" />
-        <activity android:name=".RecordVideoActivity" /> <!-- Recommended for Android 9 (API level 28) and lower. Required for Android 10 (API level 29) and higher. -->
+        <activity android:name=".RecordVideoActivity" />
+        <!-- Recommended for Android 9 (API level 28) and lower.
+        Required for Android 10 (API level 29) and higher. -->
         <service
             android:name=".services.MyNavigationService"
             android:foregroundServiceType="location" />
