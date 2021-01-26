@@ -40,7 +40,13 @@
     <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
     <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission
+        android:name="android.permission.BIND_WALLPAPER"
+        tools:ignore="ProtectedPermissions" />
 
+    <uses-feature
+        android:name="android.software.live_wallpaper"
+        android:required="false" />
     <uses-feature android:name="android.hardware.camera" />
 
     <application
@@ -51,15 +57,33 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".WallpaperActivity">
+        <activity android:name=".MyWallpaperPreferencesActivity" android:exported="true" android:label="Wallpaper Settings">
+        </activity>
+        <activity android:name=".LiveWallpaperActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ExoPlayerActivity">
+
+        <service
+            android:name=".services.MyWallpaperService"
+            android:enabled="true"
+            android:label="Wallpaper Example "
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/wallpaper" />
+        </service>
+
+        <activity android:name=".WallpaperActivity">
         </activity>
+        <activity android:name=".ExoPlayerActivity" />
         <activity android:name=".CallPhoneAndDialSimpleVersionActivity" />
         <activity android:name=".ChangeFragmentActivity" />
         <activity android:name=".SensorActivity" />
