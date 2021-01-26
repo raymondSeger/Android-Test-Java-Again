@@ -87,7 +87,7 @@
                 android:resource="@xml/wallpaper" />
         </service>
 
-        <activity android:name=".WallpaperActivity"></activity>
+        <activity android:name=".WallpaperActivity" />
         <activity android:name=".ExoPlayerActivity" />
         <activity android:name=".CallPhoneAndDialSimpleVersionActivity" />
         <activity android:name=".ChangeFragmentActivity" />
@@ -515,11 +515,6 @@
         <activity android:name=".SaveDataToExternalStorageActivity" />
         <activity android:name=".PlayMusicActivity" />
         <activity android:name=".NotificationActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".JsonActivity" />
         <activity android:name=".GoToOtherActivity" />
@@ -527,7 +522,8 @@
         <activity android:name=".GetSetPreferencesActivity" />
         <activity android:name=".GetLocationDataActivity" />
         <activity android:name=".firstActivity" />
-        <activity android:name=".BubbleActivity" />
+
+        <activity android:name=".BubbleActivity" android:allowEmbedded="true" android:resizeableActivity="true" />
     </application>
 
 </manifest>

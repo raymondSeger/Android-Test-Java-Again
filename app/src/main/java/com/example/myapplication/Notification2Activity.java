@@ -7,7 +7,9 @@ import androidx.core.app.NotificationManagerCompat;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.RingtoneManager;
@@ -26,6 +28,8 @@ public class Notification2Activity extends AppCompatActivity {
 
         Button notification_button_1 = (Button) findViewById(R.id.notification_button_1);
         Button notification_button_2 = (Button) findViewById(R.id.notification_button_2);
+        Button notification_button_3 = (Button) findViewById(R.id.notification_button_3);
+
 
         notification_button_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +45,52 @@ public class Notification2Activity extends AppCompatActivity {
             }
         });
 
+        notification_button_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_notification_3_not_working_yet();
+            }
+        });
+
+
+
+
+    }
+
+    private void show_notification_3_not_working_yet() {
+        String channelId            = "channel_name_2";
+        Intent intent               = new Intent(getBaseContext(), MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(getBaseContext(), 0, intent, 0);
+
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(getBaseContext(), channelId)
+                // Show controls on lock screen even when user hides sensitive content.
+                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                .setSmallIcon(R.drawable.flag_albania)
+                // Add media control buttons that invoke intents in your media service
+                .addAction(R.drawable.flag_albania, "Previous", pendingIntent) // #0
+                .addAction(R.drawable.flag_indonesia, "Pause", pendingIntent)  // #1
+                .addAction(R.drawable.flag_afghanistan, "Next", pendingIntent)     // #2
+                // Apply the media style template
+                .setStyle(new androidx.media.app.NotificationCompat.MediaStyle()
+                        .setShowActionsInCompactView(1 /* #1: pause button */))
+                .setContentTitle("Wonderful music")
+                .setContentText("My Awesome Band")
+                .setLargeIcon( BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.flag_indonesia) );
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        // Since android Oreo notification channel is needed.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(channelId, "Importance is high", NotificationManager.IMPORTANCE_HIGH);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        Notification the_notification = notificationBuilder.build();
+        // if you add this, the user can't remove the notification
+        // the_notification.flags = Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR;
+
+        notificationManager.notify(0 /* ID of notification */, the_notification );
     }
 
     private void show_notification_2() {
