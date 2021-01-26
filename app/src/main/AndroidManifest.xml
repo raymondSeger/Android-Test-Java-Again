@@ -57,15 +57,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".MyWallpaperPreferencesActivity" android:exported="true" android:label="Wallpaper Settings">
-        </activity>
-        <activity android:name=".LiveWallpaperActivity">
+
+        <activity android:name=".Notification2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MyWallpaperPreferencesActivity"
+            android:exported="true"
+            android:label="Wallpaper Settings" />
+
+        <activity android:name=".LiveWallpaperActivity" />
 
         <service
             android:name=".services.MyWallpaperService"
@@ -81,8 +87,7 @@
                 android:resource="@xml/wallpaper" />
         </service>
 
-        <activity android:name=".WallpaperActivity">
-        </activity>
+        <activity android:name=".WallpaperActivity"></activity>
         <activity android:name=".ExoPlayerActivity" />
         <activity android:name=".CallPhoneAndDialSimpleVersionActivity" />
         <activity android:name=".ChangeFragmentActivity" />
@@ -509,7 +514,13 @@
         <activity android:name=".SecondaryActivity" />
         <activity android:name=".SaveDataToExternalStorageActivity" />
         <activity android:name=".PlayMusicActivity" />
-        <activity android:name=".NotificationActivity" />
+        <activity android:name=".NotificationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".JsonActivity" />
         <activity android:name=".GoToOtherActivity" />
         <activity android:name=".GetStringActivity" />
