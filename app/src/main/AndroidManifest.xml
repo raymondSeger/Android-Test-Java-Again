@@ -57,20 +57,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-
-        <activity android:name=".Notification2Activity">
+        <activity android:name=".ShowDialogToChooseNumberActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".Notification2Activity">
+        </activity>
         <activity
             android:name=".MyWallpaperPreferencesActivity"
             android:exported="true"
             android:label="Wallpaper Settings" />
-
         <activity android:name=".LiveWallpaperActivity" />
 
         <service
@@ -514,16 +513,17 @@
         <activity android:name=".SecondaryActivity" />
         <activity android:name=".SaveDataToExternalStorageActivity" />
         <activity android:name=".PlayMusicActivity" />
-        <activity android:name=".NotificationActivity">
-        </activity>
+        <activity android:name=".NotificationActivity"></activity>
         <activity android:name=".JsonActivity" />
         <activity android:name=".GoToOtherActivity" />
         <activity android:name=".GetStringActivity" />
         <activity android:name=".GetSetPreferencesActivity" />
         <activity android:name=".GetLocationDataActivity" />
         <activity android:name=".firstActivity" />
-
-        <activity android:name=".BubbleActivity" android:allowEmbedded="true" android:resizeableActivity="true" />
+        <activity
+            android:name=".BubbleActivity"
+            android:allowEmbedded="true"
+            android:resizeableActivity="true" />
     </application>
 
 </manifest>
