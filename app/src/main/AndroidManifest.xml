@@ -57,11 +57,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
         <activity android:name=".BackgroundLocationActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ShowDialogToChooseNumberActivity" />
         <activity android:name=".Notification2Activity" />
@@ -86,7 +82,13 @@
         </service>
 
         <activity android:name=".WallpaperActivity" />
-        <activity android:name=".ExoPlayerActivity" />
+        <activity android:name=".ExoPlayerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".CallPhoneAndDialSimpleVersionActivity" />
         <activity android:name=".ChangeFragmentActivity" />
         <activity android:name=".SensorActivity" />
