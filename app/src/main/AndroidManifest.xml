@@ -56,9 +56,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".BackgroundLocationActivity">
+        <activity android:name=".AskForAppearOnTopActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".BackgroundLocationActivity"></activity>
         <activity android:name=".ShowDialogToChooseNumberActivity" />
         <activity android:name=".Notification2Activity" />
         <activity
@@ -82,13 +87,7 @@
         </service>
 
         <activity android:name=".WallpaperActivity" />
-        <activity android:name=".ExoPlayerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ExoPlayerActivity" />
         <activity android:name=".CallPhoneAndDialSimpleVersionActivity" />
         <activity android:name=".ChangeFragmentActivity" />
         <activity android:name=".SensorActivity" />
@@ -202,7 +201,8 @@
         Required for Android 10 (API level 29) and higher.
         -->
         <service
-            android:name=".services.MyNavigationService" android:enabled="true"
+            android:name=".services.MyNavigationService"
+            android:enabled="true"
             android:foregroundServiceType="location" />
 
         <activity android:name=".LocationActivity" />
