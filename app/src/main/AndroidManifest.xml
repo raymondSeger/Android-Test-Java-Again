@@ -5,7 +5,6 @@
     package="com.example.myapplication">
 
     <dist:module dist:instant="true" />
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -40,7 +39,9 @@
     <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
     <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
-    <uses-permission android:name="android.permission.BIND_WALLPAPER" tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.BIND_WALLPAPER"
+        tools:ignore="ProtectedPermissions" />
 
     <uses-feature
         android:name="android.software.live_wallpaper"
@@ -55,15 +56,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".ShowDialogToChooseNumberActivity">
+        <activity android:name=".BackgroundLocationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Notification2Activity">
-        </activity>
+        <activity android:name=".ShowDialogToChooseNumberActivity" />
+        <activity android:name=".Notification2Activity" />
         <activity
             android:name=".MyWallpaperPreferencesActivity"
             android:exported="true"
@@ -194,10 +195,12 @@
         <activity android:name=".FirebaseAnalyticsActivity" />
         <activity android:name=".MotionTagActivity" />
         <activity android:name=".RecordVideoActivity" />
-        <!-- Recommended for Android 9 (API level 28) and lower.
-        Required for Android 10 (API level 29) and higher. -->
+        <!--
+ Recommended for Android 9 (API level 28) and lower.
+        Required for Android 10 (API level 29) and higher.
+        -->
         <service
-            android:name=".services.MyNavigationService"
+            android:name=".services.MyNavigationService" android:enabled="true"
             android:foregroundServiceType="location" />
 
         <activity android:name=".LocationActivity" />
@@ -513,7 +516,7 @@
         <activity android:name=".SecondaryActivity" />
         <activity android:name=".SaveDataToExternalStorageActivity" />
         <activity android:name=".PlayMusicActivity" />
-        <activity android:name=".NotificationActivity"></activity>
+        <activity android:name=".NotificationActivity" />
         <activity android:name=".JsonActivity" />
         <activity android:name=".GoToOtherActivity" />
         <activity android:name=".GetStringActivity" />
