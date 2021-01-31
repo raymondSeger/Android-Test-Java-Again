@@ -39,6 +39,8 @@
     <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
     <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.MANAGE_OVERLAY_PERMISSION" />
     <uses-permission
         android:name="android.permission.BIND_WALLPAPER"
         tools:ignore="ProtectedPermissions" />
@@ -56,14 +58,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".AskForAppearOnTopActivity">
+
+        <service
+            android:name=".services.AppearOnTopService"
+            android:exported="false" />
+
+        <activity android:name=".AppearOnTopActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BackgroundLocationActivity"></activity>
+
+        <activity android:name=".AskForAppearOnTopActivity" />
+        <activity android:name=".BackgroundLocationActivity" />
         <activity android:name=".ShowDialogToChooseNumberActivity" />
         <activity android:name=".Notification2Activity" />
         <activity
