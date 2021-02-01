@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class CopyPasteActivity extends AppCompatActivity {
 
@@ -31,6 +32,7 @@ public class CopyPasteActivity extends AppCompatActivity {
                 // Creates a new text clip to put on the clipboard
                 ClipData clip = ClipData.newPlainText("simple text", "Hello, World!");
                 clipboard.setPrimaryClip(clip);
+                Toast.makeText(CopyPasteActivity.this, "data inserted to clipboard", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -41,6 +43,7 @@ public class CopyPasteActivity extends AppCompatActivity {
                 try {
                     ClipData.Item item  = clipboard.getPrimaryClip().getItemAt(0);
                     String pasteData    = (String) item.getText();
+                    Toast.makeText(CopyPasteActivity.this, pasteData, Toast.LENGTH_SHORT).show();
                 } catch(Exception e) {
                 }
 

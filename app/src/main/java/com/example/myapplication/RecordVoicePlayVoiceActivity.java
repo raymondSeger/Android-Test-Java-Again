@@ -18,6 +18,7 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.IOException;
 
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
@@ -48,8 +49,8 @@ public class RecordVoicePlayVoiceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_record_voice_play_voice);
 
         // check permission
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(RecordVoicePlayVoiceActivity.this, new String[] { WRITE_EXTERNAL_STORAGE, RECORD_AUDIO }, 1);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(RecordVoicePlayVoiceActivity.this, new String[] { WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE, RECORD_AUDIO }, 1);
             return ; // in real app, you should make alert that this feature needs that permission, so basically these kind of stuff requires "on click" event handler
         }
 

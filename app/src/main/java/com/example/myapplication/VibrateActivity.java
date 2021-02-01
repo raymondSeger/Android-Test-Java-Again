@@ -16,7 +16,7 @@ public class VibrateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vibrate);
 
-        Button button       = (Button) findViewById(R.id.get);
+        Button button       = (Button) findViewById(R.id.the_button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

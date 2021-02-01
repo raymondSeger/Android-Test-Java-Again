@@ -148,6 +148,7 @@ public class LocationActivity extends AppCompatActivity {
                         double longitude    = location.getLongitude();
                         String provider     = location.getProvider();
                         long time           = location.getTime();
+                        Toast.makeText(LocationActivity.this, String.valueOf( latitude ) + " , " + String.valueOf( longitude ), Toast.LENGTH_SHORT).show();
                     }
                 }
             });

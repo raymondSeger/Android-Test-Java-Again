@@ -53,6 +53,7 @@ public class GetLocationDataActivity extends AppCompatActivity {
             public void onSuccess(Location location) {
                 if (location != null) {
                     int a = 0;
+                    Toast.makeText(GetLocationDataActivity.this, "Latitude: " + location.getLatitude() + " \nLongitude: " + location.getLongitude(), Toast.LENGTH_SHORT).show();
                 }
             }
         });

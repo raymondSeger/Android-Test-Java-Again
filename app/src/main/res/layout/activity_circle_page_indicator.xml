@@ -28,25 +28,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <info.hoang8f.widget.FButton
+    <Button
         android:id="@+id/pick_language_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        app:fb_borderColor="#9E1717"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Pick Language"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        fbutton:buttonColor="@null"
-        fbutton:shadowEnabled="false"
-        fbutton:shadowHeight="0dp"
-        fbutton:cornerRadius="0dp"
-        android:text="BUTTON"
-        android:textColor="#fff"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp" />
+        app:layout_constraintEnd_toEndOf="parent"></Button>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,21 +8,26 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.CallLog;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Date;
 
 import static android.Manifest.permission.READ_CALL_LOG;
 import static android.Manifest.permission.WRITE_CALL_LOG;
+import static android.view.View.generateViewId;
 
 public class ReadWriteCallLogsActivity extends AppCompatActivity {
+
+    public LinearLayout linear_layout;
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
             case 1:
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    readCallLogs();
+                    makeContent();
                 } else {
                     // Permission Denied
                     Toast.makeText(getBaseContext(), "not allowed, app should exit", Toast.LENGTH_SHORT).show();
@@ -38,12 +43,14 @@ public class ReadWriteCallLogsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read_write_call_logs);
 
+        linear_layout = (LinearLayout) findViewById(R.id.linear_layout);
+
         if (ActivityCompat.checkSelfPermission(ReadWriteCallLogsActivity.this, READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(ReadWriteCallLogsActivity.this, WRITE_CALL_LOG) != PackageManager.PERMISSION_GRANTED ) {
             ActivityCompat.requestPermissions(ReadWriteCallLogsActivity.this, new String[] { READ_CALL_LOG, WRITE_CALL_LOG }, 1);
             return;
         }
 
-        String all_call_logs = readCallLogs();
+        makeContent();
 
         // write call logs
         /*
@@ -60,8 +67,11 @@ public class ReadWriteCallLogsActivity extends AppCompatActivity {
          */
     }
 
-    private String readCallLogs() {
-        StringBuffer stringBuffer   = new StringBuffer();
+    private void makeContent() {
+        readCallLogs();
+    }
+
+    private void readCallLogs() {
         Cursor cursor               = getBaseContext().getContentResolver().query(CallLog.Calls.CONTENT_URI,null, null, null, CallLog.Calls.DATE + " DESC");
         int number                  = cursor.getColumnIndex(CallLog.Calls.NUMBER);
         int type                    = cursor.getColumnIndex(CallLog.Calls.TYPE);
@@ -87,12 +97,24 @@ public class ReadWriteCallLogsActivity extends AppCompatActivity {
                     dir = "MISSED";
                     break;
             }
-            stringBuffer.append("\nPhone Number:--- " + phNumber + " \nCall Type:--- "
-                    + dir + " \nCall Date:--- " + callDayTime
-                    + " \nCall duration in sec :--- " + callDuration);
-            stringBuffer.append("\n----------------------------------");
+
+            // Make the Content - START
+            String text_to_show = String.format(" Phone Number is %s.\n Call Date is %s.\n Call duration is %s.", phNumber, callDayTime, callDuration);
+            TextView text_view = new TextView(this);
+            text_view.setText(text_to_show);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(15, 15, 15, 0);
+            text_view.setLayoutParams(params);
+            // R.id won't be generated for us, so we need to create one
+            text_view.setId(generateViewId());
+            // add generated button to view
+            linear_layout.addView(text_view);
+            // Make the Content - END
+
         }
         cursor.close();
-        return stringBuffer.toString();
     }
 }

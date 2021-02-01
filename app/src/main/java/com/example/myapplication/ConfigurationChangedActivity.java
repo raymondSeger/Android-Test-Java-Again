@@ -18,6 +18,8 @@ public class ConfigurationChangedActivity extends AppCompatActivity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
 
+        Toast.makeText(this, "Try change phone into landscape or portrait", Toast.LENGTH_SHORT).show();
+
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();

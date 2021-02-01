@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +19,7 @@ public class JsonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.json);
 
-        Button button = (Button) findViewById(R.id.get);
+        Button button = (Button) findViewById(R.id.the_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,6 +31,7 @@ public class JsonActivity extends AppCompatActivity {
                 JsonObject translatedText   = (JsonObject) array.get(0); // .get("translatedText").getAsString();
                 JsonElement a               = translatedText.get("translatedText");
                 String a_string             = a.getAsString();
+                Toast.makeText(JsonActivity.this, a_string, Toast.LENGTH_SHORT).show();
             }
         });
 

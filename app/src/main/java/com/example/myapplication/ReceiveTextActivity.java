@@ -12,6 +12,8 @@ import androidx.core.app.RemoteInput;
 
 public class ReceiveTextActivity extends AppCompatActivity {
 
+    // to get data from notification
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

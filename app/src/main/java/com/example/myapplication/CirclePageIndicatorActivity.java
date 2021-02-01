@@ -26,7 +26,7 @@ public class CirclePageIndicatorActivity extends AppCompatActivity {
 
     public ViewPager pager;
     public CirclePageIndicator dot_indicator;
-    public FancyButton pick_language_button;
+    public Button pick_language_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class CirclePageIndicatorActivity extends AppCompatActivity {
 
         dot_indicator           = (CirclePageIndicator)findViewById(R.id.dot_indicator);
         pager                   = (ViewPager) findViewById(R.id.pager);
-        pick_language_button    = (FancyButton) findViewById(R.id.pick_language_button);
+        pick_language_button    = (Button) findViewById(R.id.pick_language_button);
 
         pick_language_button.setOnClickListener(new View.OnClickListener() {
             @Override
