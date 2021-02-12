@@ -54,7 +54,5 @@ public class TelephonyActivity extends AppCompatActivity {
         cellInfo.getCellIdentity();
         cellInfo.getCellSignalStrength().getAsuLevel();
 
-        UiccCardInfo a = UiccCardInfo.
-
     }
 }
