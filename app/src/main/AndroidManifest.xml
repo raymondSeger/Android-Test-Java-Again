@@ -59,8 +59,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
+        <activity android:name=".RingToneActivity">
 
+        </activity>
+        <activity android:name=".InAppReviewActivity"></activity>
         <activity android:name=".ShowAllActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -72,7 +76,6 @@
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
-
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
