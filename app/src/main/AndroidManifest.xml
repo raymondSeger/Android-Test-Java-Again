@@ -46,6 +46,13 @@
         android:name="android.permission.BIND_WALLPAPER"
         tools:ignore="ProtectedPermissions" />
 
+
+    <!-- For SIP - START -->
+    <uses-feature android:name="android.software.sip.voip" />
+    <uses-sdk android:minSdkVersion="9" />
+    <uses-permission android:name="android.permission.USE_SIP"/>
+    <!-- For SIP - END -->
+
     <uses-feature
         android:name="android.software.live_wallpaper"
         android:required="false" />
@@ -59,14 +66,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".TelephonyActivity">
+
+        <!-- for SIP -->
+        <receiver android:name=".IncomingCallReceiver" android:label="Call Receiver" />
+
+        <activity android:name=".SIPActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RingToneActivity"></activity>
+        <activity android:name=".TelephonyActivity" />
+        <activity android:name=".RingToneActivity" />
         <activity android:name=".InAppReviewActivity" />
         <activity android:name=".ShowAllActivity">
 
