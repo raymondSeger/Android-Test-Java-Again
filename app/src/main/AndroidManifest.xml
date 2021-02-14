@@ -64,15 +64,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".MpAndroidChartActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".AnyChartActivity"></activity>
-        <activity android:name=".InterceptCallActivity"></activity>
+        <activity android:name=".MpAndroidChartActivity" />
+        <activity android:name=".AnyChartActivity" />
+        <activity android:name=".InterceptCallActivity" />
 
         <receiver
             android:name=".receivers.IncomingCallNonSIP"
@@ -81,7 +76,8 @@
             <intent-filter>
                 <action android:name="android.intent.action.PHONE_STATE" />
             </intent-filter>
-        </receiver> <!-- For Active Android - Start -->
+        </receiver>
+        <!-- For Active Android - Start -->
         <provider
             android:name="com.activeandroid.content.ContentProvider"
             android:authorities="com.example.myapplication"
@@ -97,20 +93,21 @@
         <meta-data
             android:name="AA_MODELS"
             android:value="com.example.myapplication.activeandroid.Item,com.example.myapplication.activeandroid.Category" /> <!-- For Active Android - END -->
-        <activity android:name=".ActiveAndroidActivity" /> <!-- For Active Android - END -->
+        <activity android:name=".ActiveAndroidActivity" />
+        <!-- For Active Android - END -->
         <!-- for SIP - Start -->
         <receiver
             android:name=".receivers.IncomingCallReceiver"
             android:label="Call Receiver" />
 
-        <activity android:name=".SIPActivity" /> <!-- for SIP - End -->
+        <activity android:name=".SIPActivity" />
+        <!-- for SIP - End -->
         <activity android:name=".TelephonyActivity" />
         <activity android:name=".RingToneActivity" />
         <activity android:name=".InAppReviewActivity" />
         <activity android:name=".ShowAllActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
