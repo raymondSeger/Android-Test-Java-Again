@@ -53,6 +53,5 @@ public class TelephonyActivity extends AppCompatActivity {
         CellInfo cellInfo = (CellInfo) telephonyManager.getAllCellInfo().get(0);
         cellInfo.getCellIdentity();
         cellInfo.getCellSignalStrength().getAsuLevel();
-
     }
 }

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
 
-    <uses-sdk android:minSdkVersion="9" />
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -46,8 +45,7 @@
     <uses-permission android:name="android.permission.MANAGE_OVERLAY_PERMISSION" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_CALL_LOG " />
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
-
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <uses-permission
         android:name="android.permission.BIND_WALLPAPER"
         tools:ignore="ProtectedPermissions" /> <!-- For SIP - START -->
@@ -67,12 +65,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
+        <activity android:name=".AnyChartActivity">
+        </activity>
         <activity android:name=".InterceptCallActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <receiver
@@ -98,16 +93,22 @@
         <meta-data
             android:name="AA_MODELS"
             android:value="com.example.myapplication.activeandroid.Item,com.example.myapplication.activeandroid.Category" /> <!-- For Active Android - END -->
-        <activity android:name=".ActiveAndroidActivity"></activity> <!-- for SIP -->
+        <activity android:name=".ActiveAndroidActivity" /> <!-- For Active Android - END -->
+        <!-- for SIP - Start -->
         <receiver
             android:name=".receivers.IncomingCallReceiver"
             android:label="Call Receiver" />
 
-        <activity android:name=".SIPActivity" />
+        <activity android:name=".SIPActivity" /> <!-- for SIP - End -->
         <activity android:name=".TelephonyActivity" />
         <activity android:name=".RingToneActivity" />
         <activity android:name=".InAppReviewActivity" />
         <activity android:name=".ShowAllActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
             <!-- Should be in LAUNCHER / First Activity -->
             <meta-data
