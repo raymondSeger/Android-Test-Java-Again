@@ -44,6 +44,10 @@
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.MANAGE_OVERLAY_PERMISSION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG " />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+
     <uses-permission
         android:name="android.permission.BIND_WALLPAPER"
         tools:ignore="ProtectedPermissions" /> <!-- For SIP - START -->
@@ -63,31 +67,43 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-
-        <!-- For Active Android - Start -->
-        <provider android:name="com.activeandroid.content.ContentProvider"
-            android:authorities="com.example.myapplication"
-            android:enabled="true"
-            android:exported="false" />
-        <meta-data android:name="AA_DB_NAME" android:value="ActiveAndroid_DatabaseName" />
-        <meta-data android:name="AA_DB_VERSION" android:value="3" />
-        <meta-data
-            android:name="AA_MODELS"
-            android:value="com.example.myapplication.activeandroid.Item,com.example.myapplication.activeandroid.Category"/>
-        <!-- For Active Android - END -->
-
-        <activity android:name=".ActiveAndroidActivity">
+        <activity android:name=".InterceptCallActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- for SIP -->
+
+        <receiver
+            android:name=".receivers.IncomingCallNonSIP"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver> <!-- For Active Android - Start -->
+        <provider
+            android:name="com.activeandroid.content.ContentProvider"
+            android:authorities="com.example.myapplication"
+            android:enabled="true"
+            android:exported="false" />
+
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="ActiveAndroid_DatabaseName" />
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="3" />
+        <meta-data
+            android:name="AA_MODELS"
+            android:value="com.example.myapplication.activeandroid.Item,com.example.myapplication.activeandroid.Category" /> <!-- For Active Android - END -->
+        <activity android:name=".ActiveAndroidActivity"></activity> <!-- for SIP -->
         <receiver
             android:name=".receivers.IncomingCallReceiver"
             android:label="Call Receiver" />
 
-        <activity android:name=".SIPActivity"></activity>
+        <activity android:name=".SIPActivity" />
         <activity android:name=".TelephonyActivity" />
         <activity android:name=".RingToneActivity" />
         <activity android:name=".InAppReviewActivity" />
