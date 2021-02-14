@@ -37,8 +37,8 @@ public class AnyChartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_any_chart);
 
-        // bar_chart();
-        range_chart();
+        bar_chart();
+        // range_chart();
         // threedeechart();
     }
 
