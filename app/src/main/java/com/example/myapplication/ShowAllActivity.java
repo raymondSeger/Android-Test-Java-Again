@@ -226,6 +226,7 @@ public class ShowAllActivity extends AppCompatActivity implements View.OnClickLi
         the_list.add( new ActivityObject("RingToneActivity", "164. Ringtone") );
         the_list.add( new ActivityObject("InterceptCallActivity", "165. Intercept Call") );
         the_list.add( new ActivityObject("AnyChartActivity", "166. Any Chart") );
+        the_list.add( new ActivityObject("MpAndroidChartActivity", "167. MP Android Chart") );
         // the_list.add( new ActivityObject("MyWallpaperPreferencesActivity", "154. My Wallpaper Preferences") );
         // the_list.add( new ActivityObject("DetailRecyclerViewWithPicassoActivity", "Detail Recycler View With Picasso") );
         // the_list.add( new ActivityObject("BubbleActivity", "Bubble") );
