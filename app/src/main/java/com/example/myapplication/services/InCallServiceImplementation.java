@@ -15,8 +15,6 @@ public class InCallServiceImplementation extends InCallService {
 
     @Override
     public void onCallAdded(Call call) {
-        OngoingCall.call = call
-        CallActivity.start(this, call)
     }
 
 }
